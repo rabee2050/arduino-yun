@@ -30,4 +30,4 @@ Requirements:
 - YUN shield with any of arduino boards(Uno, Leonardo or Mega)
 
 Check this youtube to see in real world:	
-- https://www.youtube.com/watch?v=p0lAnjUZaW0&t=85s
+- https://youtu.be/p0lAnjUZaW0
