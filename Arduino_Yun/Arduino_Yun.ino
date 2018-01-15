@@ -316,9 +316,9 @@ void print_wifiStatus() {
       wifiCheck.runShellCommand("/usr/bin/pretty-wifi-info.lua");
       while (wifiCheck.available() > 0) {
         char c = wifiCheck.read();
-        SerialUSB.print(c);
+        Serial.print(c);
       }
-      SerialUSB.println();
+      Serial.println();
     }
     last_ip = millis();
   }
