@@ -9,7 +9,7 @@
   - V2 Updated 30 Apr 2016
   - V3 Updated 10 Dec 2016
   - V4 Updated 27 Sep 2017
-  - V4.5 Updated 07 Oct 2018
+  - V4.5 Updated 10 Oct 2018
 
   Tested on:
   - Arduino Yun.
@@ -98,9 +98,9 @@ void process(BridgeClient client) {
 }
 
 void terminalCommand(BridgeClient client) {//Here you recieve data form app terminal
+  String data = client.readStringUntil('/');
   client.print( "Ok from Arduino " + String(random(1, 100)));
-//  String data = client.readStringUntil('/');
-//  SerialUSB.println(data);
+  Serial.print(data);
 }
 
 void digitalCommand(BridgeClient client) {
@@ -294,9 +294,9 @@ void print_wifiStatus() {
       wifiCheck.runShellCommand("/usr/bin/pretty-wifi-info.lua");
       while (wifiCheck.available() > 0) {
         char c = wifiCheck.read();
-        SerialUSB.print(c);
+        Serial.print(c);
       }
-      SerialUSB.println();
+      Serial.println();
     }
     serialTimer = millis();
   }
